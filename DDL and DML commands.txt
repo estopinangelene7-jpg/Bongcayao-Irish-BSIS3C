@@ -1,0 +1,84 @@
+CREATE DATABASE irish;
+
+CREATE TABLE PATIENT (
+  PatientID INT PRIMARY KEY,
+  FirstName VARCHAR(50),
+  LastName VARCHAR(50),
+  Gender VARCHAR(50),
+  Age VARCHAR(50)
+);
+
+CREATE TABLE Doctor (
+DoctorID INT PRIMARY KEY,
+  FirstName VARCHAR(50),
+  LastName VARCHAR(50),
+  Specialization VARCHAR(50),
+  DepartmentID VARCHAR(50)
+);
+
+CREATE TABLE Department (
+DepartmentID INT PRIMARY KEY,
+  DepartmentName VARCHAR(50)
+);
+
+CREATE TABLE Appointment (
+AppointmentID INT PRIMARY KEY,
+  PatientID VARCHAR(50),
+  DoctorID VARCHAR(50),
+  AppointmentDate VARCHAR(50)
+);
+
+CREATE TABLE Billing (
+BillID INT PRIMARY KEY,
+  PatientID VARCHAR(50),
+  Amount VARCHAR(50),
+  PaymentStatus VARCHAR(50)
+);
+
+INSERT INTO patient ( PatientID, FirstName, LastName, Gender, Age)
+VALUES ('01', 'Maria', 'Santos', 'Female', '28');
+
+INSERT INTO patient ( PatientID, FirstName, LastName, Gender, Age)
+VALUES ('02', 'Arjemar', 'Gornez', 'Male', '35');
+
+INSERT INTO doctor ( DoctorID, FirstName, LastName, Specialization, DepartmentID)
+VALUES ('01', 'Anna', 'Reyes', 'Pediatrics', 'Dep01');
+
+NSERT INTO doctor ( DoctorID, FirstName, LastName, Specialization, DepartmentID)
+VALUES ('02', 'Mari', 'Garcia', 'Cardiology', 'Dep02');
+
+NSERT INTO department (DepartmentID, DepartmentName)
+VALUES ('01', 'Pediatrics');
+
+INSERT INTO department (DepartmentID, DepartmentName)
+VALUES ('02', 'Cardiology');
+
+INSERT INTO appointment (AppointmentID, PatientID, DoctorId, AppointmentDate)
+VALUES ('01', '01', '01', '2026-07-05');
+
+NSERT INTO appointment (AppointmentID, PatientID, DoctorId, AppointmentDate)
+VALUES ('02', '02', '02', '2026-07-06');
+
+INSERT INTO billing (BillID, PatientID, Amount, PaymentStatus)
+VALUES ('01', '01', '2500', 'Paid');
+
+INSERT INTO billing (BillID, PatientID, Amount, PaymentStatus)
+VALUES ('02', '02', '1800', '	Unpaid');
+
+ALTER TABLE patient 
+ADD username VARCHAR (50);
+
+ALTER TABLE patient 
+ADD password VARCHAR (50);
+
+UPDATE patient SET username='irish'
+WHERE patientID='1'
+
+UPDATE patient SET username='arjemar'
+WHERE patientID='2'
+
+UPDATE patient SET PASSWORD='456'
+WHERE patientID='2'
+
+UPDATE patient SET PASSWORD='123'
+WHERE patientID
